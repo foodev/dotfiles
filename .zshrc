@@ -15,11 +15,21 @@ setopt hist_ignore_space
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
-# 
+# enable vcs (git) info
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats '[%b] %r/%S %m '
+precmd() {
+    vcs_info
+}
+setopt prompt_subst
+
+#
 export EDITOR=vim
 
 # promt
-export PS1=$'%{\e[0;37m%}[%{\e[0;37m%}%D %T%{\e[0;37m%}]%{\e[0m%} %{\e[0;34m%}%n%{\e[0m%}@%{\e[1;33m%}%M%{\e[0m%} %{\e[1;31m%}%~%{\e[0m%} %# '
+export PS1=$'%{\e[0;34m%}%n%{\e[0m%}@%{\e[0;33m%}%M%{\e[0m%} %{\e[0;31m%}%~%{\e[0m%} %# '
+export RPS1=$'${vcs_info_msg_0_}'
 
 # aliases
 alias grep='grep --color=auto'
