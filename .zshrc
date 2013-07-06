@@ -18,7 +18,7 @@ bindkey '^R' history-incremental-search-backward
 # enable vcs (git) info
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats '[%b] %r/%S %m '
+zstyle ':vcs_info:git*' formats $'%{\e[38;5;193m%}[%b] %r/%S %m %{\e[0m%}'
 precmd() {
     vcs_info
 }
@@ -28,7 +28,7 @@ setopt prompt_subst
 export EDITOR=vim
 
 # promt
-export PS1=$'%{\e[0;34m%}%n%{\e[0m%}@%{\e[0;33m%}%M%{\e[0m%} %{\e[0;31m%}%~%{\e[0m%} %# '
+export PS1=$'%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%} %{\e[38;5;155m%}%~%{\e[0m%} %# '
 export RPS1=$'${vcs_info_msg_0_}'
 
 # aliases
