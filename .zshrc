@@ -28,7 +28,9 @@ setopt prompt_subst
 export EDITOR=vim
 
 # promt
-export PS1=$'%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%} %{\e[38;5;155m%}%~%{\e[0m%} %# '
+[ -n "${SSH_CONNECTION}" ] && prefix="(ssh) "
+
+export PS1=$'${prefix:-""}%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%} %{\e[38;5;155m%}%~%{\e[0m%} %# '
 export RPS1=$'${vcs_info_msg_0_}'
 
 # aliases
