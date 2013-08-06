@@ -6,8 +6,6 @@ setopt appendhistory autocd extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-. /usr/share/doc/pkgfile/command-not-found.zsh
-
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
