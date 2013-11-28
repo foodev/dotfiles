@@ -6,14 +6,14 @@
 # date: 2013/08/10
 #
 
-FILES=(".vimrc .zshrc .Xresources")
+FILES=(".vim .vimrc .zshrc .Xresources")
 
 for file in $FILES; do
-    read -p "Create symlink $HOME/${file} ? [Y/n] " CONFIRM
+    read -p "Create symlink $HOME/$file ? [Y/n] " CONFIRM
 
     if [ "$CONFIRM" = "Y" ] || [ "$CONFIRM" = "y" ] || [ -z "$CONFIRM" ]; then
         unset $CONFIRM
 
-        ln -vs $file $HOME/${file}
+        ln -vs $(dirname `realpath $0`)/$file $HOME/$file
     fi
 done
