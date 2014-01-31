@@ -6,7 +6,7 @@
 # date: 2013/08/10
 #
 
-FILES=(".vim .vimrc .zshrc .Xresources")
+FILES=(".vim .vimrc .zshrc")
 
 for file in $FILES; do
     read -p "Create symlink $HOME/$file ? [Y/n] " CONFIRM
