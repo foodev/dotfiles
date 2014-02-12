@@ -6,7 +6,7 @@
 # date: 2013/08/10
 #
 
-FILES=(".vim .vimrc .zshrc")
+FILES=(".vim .vimrc .zshrc .conkyrc .conky-weather")
 
 for file in $FILES; do
     read -p "Create symlink $HOME/$file ? [Y/n] " CONFIRM
