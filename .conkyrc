@@ -6,8 +6,8 @@ no_buffers yes
 imlib_cache_size 10
 
 # Window specifications #
-gap_x 400
-gap_y -28
+gap_x -23
+gap_y 290
 minimum_size 268 390
 maximum_width 268
 own_window yes
