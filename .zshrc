@@ -43,9 +43,10 @@ alias ll='ls -lh'
 alias lla='ls -lha'
 alias md=mkdir
 alias rd='rm -r'
-for c in cp mv mkdir rm chmod chown; do
+for c in cp mv mkdir chmod chown; do
     alias $c="$c -v"
 done
+alias rm='rm -iv'
 alias recdwm='cd ~/.dwm; makepkg -efi --skipinteg; killall dwm'
 alias pacman='sudo pacman'
 alias ff='find -type f -iname'
