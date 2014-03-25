@@ -10,6 +10,8 @@ setopt hist_ignore_space
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^R' history-incremental-search-backward
+bindkey '^[[3~' delete-char
+bindkey '^[3;5~' delete-char
 
 # completion
 autoload -U compinit && compinit
@@ -47,10 +49,14 @@ for c in cp mv mkdir chmod chown; do
     alias $c="$c -v"
 done
 alias rm='rm -iv'
-alias recdwm='cd ~/.dwm; makepkg -efi --skipinteg; killall dwm'
-alias pacman='sudo pacman'
+#alias recdwm='cd ~/.dwm; makepkg -efi --skipinteg; killall dwm'
 alias ff='find -type f -iname'
 alias fd='find -type d -iname'
 alias c='clear'
+alias pacup='sudo pacman -Syu'
+alias pacins='sudo pacman -S'
+alias pacrem='sudo pacman -Rns'
+alias pacsearch='pacman -Ss'
+alias pacclean='sudo pacman -Scc'
 
 export EDITOR=vim
