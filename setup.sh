@@ -2,8 +2,8 @@
 #
 # create symlinks for the config files
 #
-# author: Jonas Hantelmann
-# date: 2013/08/10
+# author: Jonas Hantelmann <jonas@foodev.de>
+# date: 2014-03-26
 #
 
 FILES=(".vim .vimrc .zshrc .conkyrc .conky-weather .gitconfig")
