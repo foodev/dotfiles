@@ -22,6 +22,7 @@ set title
 set laststatus=2
 set ruler
 set hidden
+set background=dark
 filetype plugin indent on     " required!
 
 " Bundles
@@ -29,9 +30,9 @@ filetype plugin indent on     " required!
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
 " colorscheme herald
-colorscheme molokai
+" colorscheme molokai
+colorscheme solarized
 highlight CursorLine   cterm=none ctermbg=black ctermfg=none
-" set background=dark
 
 Bundle 'kien/ctrlp.vim'
 " Bundle 'Valloric/YouCompleteMe'
