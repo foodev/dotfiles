@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Config.Xfce
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.IM
 import XMonad.Layout.Grid
 import XMonad.Layout.PerWorkspace
@@ -31,6 +32,7 @@ myKeys conf@(XConfig {modMask = modm}) = M.fromList $
 main = xmonad $ xfceConfig
     {
         modMask             = mod4Mask,
+        handleEventHook     = fullscreenEventHook,
         terminal            = "xfce4-terminal",
         workspaces          = withScreens 2 ["web", "dev", "chat", "vm", "games"],
         borderWidth         = 2,
