@@ -22,13 +22,14 @@ zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # enable vcs (git) info
 # http://sourceforge.net/p/zsh/code/ci/master/tree/Misc/vcs_info-examples
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 # →  (%s)
-zstyle ':vcs_info:git*' formats $' → %{\e[38;5;193m%}%b%{\e[0m%}'
+zstyle ':vcs_info:git*' formats $' → %{\e[38;5;193m%}%b %S%{\e[0m%}'
 precmd() {
     vcs_info
 }
@@ -37,7 +38,7 @@ setopt prompt_subst
 # prompt
 [ -n "${SSH_CONNECTION}" ] && prefix="(ssh) "
 
-export PS1=$'${prefix:-""}%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %# '
+export PS1=$'%{\e[38;5;255m%}${prefix:-""}%{\e[0m%}%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %# '
 #export RPS1=$'${vcs_info_msg_0_}'
 
 # aliases
@@ -61,5 +62,6 @@ alias pacins='sudo pacman -S'
 alias pacrem='sudo pacman -Rns'
 alias pacsearch='pacman -Ss'
 alias pacclean='sudo pacman -Scc'
+alias diff='colordiff'
 
 export EDITOR=vim
