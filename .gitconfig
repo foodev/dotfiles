@@ -5,6 +5,7 @@
 	ui = true
 [core]
 	editor = vim
+	ignorecase = false
 [alias]
 	co = checkout
 	ci = commit
