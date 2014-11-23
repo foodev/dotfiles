@@ -23,6 +23,9 @@ set laststatus=2
 set ruler
 set hidden
 set background=dark
+set tabstop=4
+set shiftwidth=4
+set expandtab
 filetype plugin indent on     " required!
 
 " Bundles
@@ -35,10 +38,6 @@ colorscheme solarized
 highlight CursorLine   cterm=none ctermbg=black ctermfg=none
 
 Bundle 'kien/ctrlp.vim'
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
-" Bundle 'fholgado/minibufexpl.vim'
 Bundle 'airblade/vim-gitgutter'
 
 " bufferline
@@ -61,7 +60,9 @@ let NERDTreeQuitOnOpen = 1
 "
 " get rid of Ex mode
 nnoremap Q <nop>
-" buffer next
-nnoremap <silent> <F12> :bn<CR>
-" buffer previous
-nnoremap <silent> <S-F12> :bp<CR>
+" switch between windows
+nnoremap , <C-w><C-w>
+" switch between tabs
+nnoremap <TAB> gt
+" fuzzy search in buffers
+"nnoremap <silent><leader>b :CtrlPBuffer
