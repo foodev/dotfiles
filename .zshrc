@@ -29,7 +29,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 # →  (%s)
-zstyle ':vcs_info:git*' formats $' → %{\e[38;5;193m%}%b %S%{\e[0m%}'
+zstyle ':vcs_info:git*' formats $' %{\e[38;5;250m%}on %{\e[38;5;193m%}%b %{\e[38;5;250m%}→ %{\e[38;5;193m%}/%S%{\e[0m%}'
 precmd() {
     vcs_info
 }
@@ -38,8 +38,11 @@ setopt prompt_subst
 # prompt
 [ -n "${SSH_CONNECTION}" ] && prefix="(ssh) "
 
-export PS1=$'%{\e[38;5;255m%}${prefix:-""}%{\e[0m%}%{\e[38;5;39m%}%n%{\e[0m%}@%{\e[38;5;173m%}%M%{\e[0m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %# '
-#export RPS1=$'${vcs_info_msg_0_}'
+if [ `whoami` = "root" ]; then
+    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;1m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%M%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;1m%}λ%{\e[0m%} '
+else
+    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;39m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%M%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;250m%}λ%{\e[0m%} '
+fi
 
 # aliases
 alias grep='grep --color=auto'
@@ -60,8 +63,16 @@ alias t='htop'
 alias pacup='sudo pacman -Syu'
 alias pacins='sudo pacman -S'
 alias pacrem='sudo pacman -Rns'
+alias pacinfo='sudo pacman -Si'
 alias pacsearch='pacman -Ss'
 alias pacclean='sudo pacman -Scc'
 alias diff='colordiff'
 
 export EDITOR=vim
+export TERM=xterm-256color
+
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# https://github.com/seebi/dircolors-solarized
+eval `dircolors $HOME/.dircolors`
