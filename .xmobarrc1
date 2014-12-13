@@ -1,0 +1,11 @@
+Config {
+    position = Static { xpos = 1924, ypos = 4, width = 1912, height = 30 },
+    overrideRedirect = False,
+    allDesktops = True,
+    border = BottomB,
+    borderColor = "#586e75",
+    commands = [
+        Run StdinReader,
+        Run Date "<fc=#cb4b16>%A,</fc> <fc=#268bd2>%d. %B %Y</fc> <fc=#859900>%H:%M</fc>" "date" 9
+    ]
+}
