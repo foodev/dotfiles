@@ -3,7 +3,7 @@ Config {
     overrideRedirect = False,
     allDesktops = True,
     border = BottomB,
-    borderColor = "#586e75",
+    borderColor = "#657b83",
     commands = [
         Run StdinReader,
         Run Date "<fc=#cb4b16>%A,</fc> <fc=#268bd2>%d. %B %Y</fc> <fc=#859900>%H:%M</fc>" "date" 9
