@@ -11,5 +11,6 @@
 	ci = commit
 	st = status
 	br = branch
-    diffc = diff --cached
+	diffc = diff --cached
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	undo = reset --soft HEAD~
