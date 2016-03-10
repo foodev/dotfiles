@@ -1,10 +1,10 @@
 # history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zshhist
 setopt appendhistory autocd extendedglob
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
 
 # keybinds
 bindkey '^A' beginning-of-line
@@ -28,8 +28,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # http://sourceforge.net/p/zsh/code/ci/master/tree/Misc/vcs_info-examples
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-# →  (%s)
-zstyle ':vcs_info:git*' formats $' %{\e[38;5;250m%}on %{\e[38;5;193m%}%b %{\e[38;5;250m%}→ %{\e[38;5;193m%}/%S%{\e[0m%}'
+zstyle ':vcs_info:git*' formats $' %{\e[38;5;250m%}→ %{\e[38;5;193m%}%b%{\e[0m%}'
 precmd() {
     vcs_info
 }
@@ -39,10 +38,15 @@ setopt prompt_subst
 [ -n "${SSH_CONNECTION}" ] && prefix="(ssh) "
 
 if [ `whoami` = "root" ]; then
-    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;1m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%M%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;1m%}λ%{\e[0m%} '
+    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;1m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%m%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;1m%}λ%{\e[0m%} '
 else
-    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;39m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%M%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;250m%}λ%{\e[0m%} '
+    export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;39m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%m%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;250m%}λ%{\e[0m%} '
 fi
+
+# functions
+function find_duplicates () {
+    find $1 -type f -exec md5sum {} \; | sort | uniq -D --check-chars=32
+}
 
 # aliases
 alias grep='grep --color=auto'
@@ -52,8 +56,8 @@ alias l='ls -lh'
 alias la='ls -lha'
 alias md='mkdir'
 alias rd='rm -r'
-for c in cp mv mkdir chmod chown; do
-    alias $c="$c -v"
+for bin in cp mv mkdir chmod chown; do
+    alias $bin="$bin -v"
 done
 alias ff='find . -type f -iname'
 alias fd='find . -type d -iname'
@@ -63,12 +67,12 @@ alias t='htop'
 alias df='df -h'
 alias du='du -h'
 alias tree='tree -h'
-alias pacup='pacaur -Syu'
-alias pacins='pacaur -S'
-alias pacrem='sudo pacaur -Rns'
-alias pacinfo='sudo pacaur -Si'
-alias pacsearch='pacaur -Ss'
-alias pacclean='sudo pacaur -Scc'
+alias pkgup='pacaur -Syu'
+alias pkgins='pacaur -S'
+alias pkgrem='sudo pacaur -Rns'
+alias pkginfo='sudo pacaur -Si'
+alias pkgsearch='pacaur -Ss'
+alias pkgclean='sudo pacaur -Scc'
 alias diff='colordiff'
 alias g='git'
 alias s='ack --literal'
