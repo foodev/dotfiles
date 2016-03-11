@@ -44,8 +44,29 @@ else
 fi
 
 # functions
-function find_duplicates () {
+function find_duplicates() {
     find $1 -type f -exec md5sum {} \; | sort | uniq -D --check-chars=32
+}
+
+# start or stop a virtual box in headless mode
+# use the "Development" machine as default
+function vm() {
+    VM_NAME=${2:-"Development"}
+
+    case $1 in
+        start)
+            VBoxManage startvm "$VM_NAME" --type headless
+            ;;
+        stop)
+            VBoxManage controlvm "$VM_NAME" savestate
+            ;;
+        status)
+            VBoxManage list runningvms
+            ;;
+        *)
+            echo "usage: $0 start|stop|status"
+            ;;
+    esac
 }
 
 # aliases
