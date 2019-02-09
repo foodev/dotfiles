@@ -1,19 +1,22 @@
-# history
-HISTSIZE=10000
-SAVEHIST=10000
+# History
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.zshhist
 setopt appendhistory autocd extendedglob
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
-# keybinds
+# Keybinds
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^R' history-incremental-search-backward
 bindkey '^[[3~' delete-char
 bindkey '^[3;5~' delete-char
 
-# completion
+# Load custom auto completion files
+#fpath=(~/.dotfiles/zsh-completion $fpath)
+
+# Auto completion
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 zstyle ':completion:*' verbose yes
@@ -24,7 +27,7 @@ zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# enable vcs (git) info
+# Enable git info
 # http://sourceforge.net/p/zsh/code/ci/master/tree/Misc/vcs_info-examples
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
@@ -34,7 +37,7 @@ precmd() {
 }
 setopt prompt_subst
 
-# prompt
+# Prompt
 [ -n "${SSH_CONNECTION}" ] && prefix="(ssh) "
 
 if [ `whoami` = "root" ]; then
@@ -43,12 +46,12 @@ else
     export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;39m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%m%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;250m%}λ%{\e[0m%} '
 fi
 
-# functions
+# Functions
 function find_duplicates() {
     find $1 -type f -exec md5sum {} \; | sort | uniq -D --check-chars=32
 }
 
-# start or stop a virtual box in headless mode
+# Start or stop a virtual box in headless mode
 # use the "Development" machine as default
 function vm() {
     VM_NAME=${2:-"Development"}
@@ -69,7 +72,7 @@ function vm() {
     esac
 }
 
-# aliases
+# Aliases
 alias grep='grep --color=auto'
 alias rm='rm -iv'
 alias ls='ls --color=auto'
@@ -80,24 +83,15 @@ alias rd='rm -r'
 for bin in cp mv mkdir chmod chown; do
     alias $bin="$bin -v"
 done
-alias ff='find . -type f -iname'
-alias fd='find . -type d -iname'
 alias c='clear'
-alias v='vim'
-alias t='htop'
-alias df='df -h'
-alias du='du -h'
-alias tree='tree -h'
-alias pkgup='pacaur -Syu'
-alias pkgins='pacaur -S'
-alias pkgrem='sudo pacaur -Rns'
-alias pkginfo='sudo pacaur -Si'
-alias pkgsearch='pacaur -Ss'
-alias pkgclean='sudo pacaur -Scc'
 alias diff='colordiff'
+alias pkgup='pikaur -Syu'
+alias pkgins='pikaur -S'
+alias pkgrem='pikaur -Rns'
+alias pkgsearch='pikaur -Ss'
 alias g='git'
-alias s='ack --literal'
-alias ntop='sudo jnettop -i enp0s25'
+alias s='ack --with-filename'
+alias sp='ack --with-filename --type=php'
 
 export EDITOR=vim
 export TERM=xterm-256color
@@ -105,5 +99,5 @@ export TERM=xterm-256color
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# https://github.com/seebi/dircolors-solarized
+# Solarized colors for directory lisintg (https://github.com/seebi/dircolors-solarized)
 eval `dircolors $HOME/.dircolors`
