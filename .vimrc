@@ -1,68 +1,40 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+" Load plugins via pathogen.vim
+execute pathogen#infect()
 
-" activate vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Settings for gvim
+if has('gui_running')
+    " Hide toolbar in gvim
+    set guioptions-=T
 
-" required!
-Bundle 'gmarik/vundle'
+    " Set font family and size
+    set guifont=Fantasque\ Sans\ Mono\ 19
+endif
 
-" enable syntax highlighting
-syntax on
-
-" General
-set t_Co=256
-set encoding=utf-8
+" Show line numbers
 set number
-set incsearch
-set hlsearch
-set cursorline
-set title
-set laststatus=2
-set ruler
-set hidden
+
+" Enable syntax highlighting
+syntax enable
 set background=dark
-set tabstop=4
-set shiftwidth=4
-set expandtab
-filetype plugin indent on     " required!
-
-" Bundles
-"
-" colorscheme
-Bundle 'flazz/vim-colorschemes'
-" colorscheme herald
-" colorscheme molokai
 colorscheme solarized
-highlight CursorLine   cterm=none ctermbg=black ctermfg=none
 
-Bundle 'kien/ctrlp.vim'
-Bundle 'airblade/vim-gitgutter'
+" Highlight current line
+set cursorline
 
-" bufferline
-Bundle 'bling/vim-bufferline'
-let g:bufferline_echo = 0
+" Don't wrap lines
+set nowrap
 
-" statusline
-Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_symbols = get(g:, 'airline_symbols', {})
-"let g:airline_symbols.space = "\ua0"
+" Show vertical line at column 80
+set colorcolumn=80
 
-" NERDTree
-Bundle 'scrooloose/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen = 1
+" Insert 4 whitespace characters when the tab key is pressed
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" keybinds
-"
-" get rid of Ex mode
-nnoremap Q <nop>
-" switch between windows
-nnoremap , <C-w><C-w>
-" switch between tabs
-nnoremap <TAB> gt
-" fuzzy search in buffers
-"nnoremap <silent><leader>b :CtrlPBuffer
+" Status bar
+function GitBranch()
+    return ""
+    return system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr --delete '\n'")
+endfunction
+
+set laststatus=2
+set statusline=\ Line\ %l,\ Column\ %c%=%.20{GitBranch()}\ \ \ \ \ %{toupper(&fileencoding)}\ \ \ \ \ %{toupper(&fileformat)}\ \ \ \ \ %{&shiftwidth}\ \ \ \ \ %Y\ \ \ \ \ 
