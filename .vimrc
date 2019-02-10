@@ -8,6 +8,27 @@ if has('gui_running')
 
     " Set font family and size
     set guifont=Fantasque\ Sans\ Mono\ 19
+
+    " Tab bar
+    set showtabline=2
+    set guitablabel=%t\ %m
+
+    " Switch between tabs by pressing <Alt> + [1-9]
+    noremap <A-1> 1gt
+    noremap <A-2> 2gt
+    noremap <A-3> 3gt
+    noremap <A-4> 4gt
+    noremap <A-5> 5gt
+    noremap <A-6> 6gt
+    noremap <A-7> 7gt
+    noremap <A-8> 8gt
+    noremap <A-9> :tablast<Enter>
+
+    " Open new tab with <Ctrl> + n
+    noremap <C-n> :tabnew<Enter>
+
+    " Close tab with <Ctrl> + w
+    noremap <C-w> :tabclose<Enter>
 endif
 
 " Show line numbers
