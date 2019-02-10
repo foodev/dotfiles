@@ -3,8 +3,8 @@ execute pathogen#infect()
 
 " Settings for gvim
 if has('gui_running')
-    " Hide toolbar in gvim
-    set guioptions-=T
+    " Hide menu and toolbar in gvim
+    set guioptions-=m guioptions-=T
 
     " Set font family and size
     set guifont=Fantasque\ Sans\ Mono\ 19
@@ -29,6 +29,9 @@ set colorcolumn=80
 
 " Insert 4 whitespace characters when the tab key is pressed
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" Copy the indentation from the previous line, when starting a new line
+set autoindent
 
 " Find search term while typing
 set incsearch
