@@ -10,7 +10,6 @@ if has('gui_running')
     set guifont=Fantasque\ Sans\ Mono\ 19
 
     " Tab bar
-    set showtabline=2
     set guitablabel=%t\ %m
 
     " Switch between tabs by pressing <Alt> + [1-9]
@@ -23,12 +22,6 @@ if has('gui_running')
     noremap <A-7> 7gt
     noremap <A-8> 8gt
     noremap <A-9> :tablast<Enter>
-
-    " Open new tab with <Ctrl> + n
-    noremap <C-n> :tabnew<Enter>
-
-    " Close tab with <Ctrl> + w
-    noremap <C-w> :tabclose<Enter>
 endif
 
 " Show line numbers
@@ -58,13 +51,22 @@ set autoindent
 set incsearch
 
 " Status bar
-function GitBranch()
+function! GitBranch()
     return ""
     return system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr --delete '\n'")
 endfunction
 
 set laststatus=2
 set statusline=\ Line\ %l,\ Column\ %c%=%.20{GitBranch()}\ \ \ \ \ %{toupper(&fileencoding)}\ \ \ \ \ %{toupper(&fileformat)}\ \ \ \ \ %{&shiftwidth}\ \ \ \ \ %Y\ \ \ \ \ 
+
+" Tab bar
+set showtabline=2
+
+" Open new tab with <Ctrl> + n
+noremap <C-n> :tabnew<Enter>
+
+" Close tab with <Ctrl> + w
+noremap <C-w> :tabclose<Enter>
 
 " Custom mapping for multiple cursors
 let g:multi_cursor_use_default_mapping=0
