@@ -24,6 +24,9 @@ if has('gui_running')
     noremap <A-9> :tablast<Enter>
 endif
 
+" Enable mouse support for terminals
+set mouse=a
+
 " Show line numbers
 set number
 
@@ -42,7 +45,7 @@ set nowrap
 set colorcolumn=80
 
 " Insert 4 whitespace characters when the tab key is pressed
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Copy the indentation from the previous line, when starting a new line
 set autoindent
