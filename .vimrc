@@ -57,14 +57,12 @@ set autoindent
 " Find search term while typing
 set incsearch
 
-" Status bar
-function! GitBranch()
-    return ""
-    return system("git rev-parse --abbrev-ref HEAD 2> /dev/null | tr --delete '\n'")
-endfunction
+" Show the current command in the bottom right corner
+set showcmd
 
+" Status bar
 set laststatus=2
-set statusline=\ Line\ %l,\ Column\ %c%=%.20{GitBranch()}\ \ \ \ \ %{toupper(&fileencoding)}\ \ \ \ \ %{toupper(&fileformat)}\ \ \ \ \ %{&shiftwidth}\ \ \ \ \ %Y\ \ \ \ \ 
+set statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}\ \ \ \ \ %{toupper(&fileformat)}\ \ \ \ \ %{&shiftwidth}\ \ \ \ \ %Y\ \ \ \ \ 
 
 " Tab bar
 set showtabline=2
