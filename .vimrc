@@ -27,6 +27,10 @@ endif
 " Enable mouse support for terminals
 set mouse=a
 
+" List files with builtin filebrowser as tree and without banner
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+
 " Show line numbers
 set number
 
