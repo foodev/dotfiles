@@ -67,8 +67,7 @@ set incsearch
 set showcmd
 
 " Status bar
-set laststatus=2
-set statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}\ \ \ \ \ %{toupper(&fileformat)}\ \ \ \ \ %{&shiftwidth}\ \ \ \ \ %Y\ \ \ \ \ 
+set laststatus=2 statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}%{repeat(\"\ \",5)}%{toupper(&fileformat)}%{repeat(\"\ \",5)}%{&shiftwidth}%{repeat(\"\ \",4)}\ %Y%{repeat(\"\ \",5)}
 
 " Tab bar
 set showtabline=2
