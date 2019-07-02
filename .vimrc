@@ -36,7 +36,7 @@ set number
 
 " Enable syntax highlighting
 syntax enable
-set background=dark
+set background=dark " Use "light" for light theme
 colorscheme solarized
 
 " Highlight current line
@@ -53,6 +53,9 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Copy the indentation from the previous line, when starting a new line
 set autoindent
+
+" Fold code based on indentation
+set foldmethod=indent foldminlines=0
 
 " Find search term while typing
 set incsearch
