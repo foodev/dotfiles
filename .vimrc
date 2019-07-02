@@ -80,6 +80,9 @@ noremap <C-n> :tabnew<Enter>
 " Close tab with <Ctrl> + w
 noremap <C-w> :tabclose<Enter>
 
+" Got to function/method definition in file with <Ctrl> + r
+noremap <C-r> :CtrlPBufTag<Enter>
+
 " Custom mapping for multiple cursors
 let g:multi_cursor_use_default_mapping=0
 
