@@ -71,8 +71,7 @@ set statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}\ \ \ \ \ %{tou
 set showtabline=2
 
 " Display CtrlP dropdown at the top of the window
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window = 'top,order:ttb,result:0'
 
 " Open new tab with <Ctrl> + n
 noremap <C-n> :tabnew<Enter>
