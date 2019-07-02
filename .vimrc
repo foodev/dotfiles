@@ -83,6 +83,9 @@ noremap <C-w> :tabclose<Enter>
 " Got to function/method definition in file with <Ctrl> + r
 noremap <C-r> :CtrlPBufTag<Enter>
 
+" Show only methods/functions with CtrlPBufTag
+let g:ctrlp_buftag_types = {'php': '--php-kinds=f'}
+
 " Custom mapping for multiple cursors
 let g:multi_cursor_use_default_mapping=0
 
