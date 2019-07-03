@@ -1,6 +1,3 @@
-" Load plugins via pathogen.vim
-execute pathogen#infect()
-
 " Settings for gvim
 if has('gui_running')
     " Hide menu and toolbar in gvim
