@@ -1,26 +1,3 @@
-" Settings for gvim
-if has('gui_running')
-    " Hide menu and toolbar in gvim
-    set guioptions-=m guioptions-=T
-
-    " Set font family and size
-    set guifont=Fantasque\ Sans\ Mono\ 19
-
-    " Tab bar
-    set guitablabel=%t\ %m
-
-    " Switch between tabs by pressing <Alt> + [1-9]
-    noremap <A-1> 1gt
-    noremap <A-2> 2gt
-    noremap <A-3> 3gt
-    noremap <A-4> 4gt
-    noremap <A-5> 5gt
-    noremap <A-6> 6gt
-    noremap <A-7> 7gt
-    noremap <A-8> 8gt
-    noremap <A-9> :tablast<Enter>
-endif
-
 " Tab bar
 set showtabline=2
 
