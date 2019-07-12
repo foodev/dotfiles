@@ -48,6 +48,9 @@ set nowrap
 " Show vertical line at column 80
 set colorcolumn=80
 
+" Show whitespaces and tabs
+set list listchars=space:·,tab:──
+
 " Insert 4 whitespace characters when the tab key is pressed
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
