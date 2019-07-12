@@ -21,15 +21,14 @@ if has('gui_running')
     noremap <A-9> :tablast<Enter>
 endif
 
+" Tab bar
+set showtabline=2
+
+" Status bar
+set laststatus=2 statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}%{repeat(\"\ \",5)}%{toupper(&fileformat)}%{repeat(\"\ \",5)}%{&shiftwidth}%{repeat(\"\ \",4)}\ %Y%{repeat(\"\ \",5)}
+
 " Enable mouse support for terminals
 set mouse=a
-
-" List files with builtin filebrowser as tree on the left side and without banner
-let g:netrw_liststyle=3
-let g:netrw_banner=0
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
 
 " Show line numbers
 set number
@@ -66,23 +65,15 @@ set incsearch
 " Show the current command in the bottom right corner
 set showcmd
 
-" Status bar
-set laststatus=2 statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}%{repeat(\"\ \",5)}%{toupper(&fileformat)}%{repeat(\"\ \",5)}%{&shiftwidth}%{repeat(\"\ \",4)}\ %Y%{repeat(\"\ \",5)}
-
-" Tab bar
-set showtabline=2
+" List files with builtin filebrowser as tree on the left side and without banner
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
 
 " Display CtrlP dropdown at the top of the window
 let g:ctrlp_match_window = 'top,order:ttb,result:0'
-
-" Open new tab with <Ctrl> + n
-noremap <C-n> :tabnew<Enter>
-
-" Close tab with <Ctrl> + w
-noremap <C-w> :tabclose<Enter>
-
-" Got to function/method definition in file with <Ctrl> + r
-noremap <C-r> :CtrlPBufTag<Enter>
 
 " Show only methods/functions with CtrlPBufTag
 let g:ctrlp_buftag_types = {'php': '--php-kinds=f'}
@@ -97,3 +88,12 @@ let g:multi_cursor_next_key = '<C-d>'
 let g:multi_cursor_prev_key = '<C-p>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
+
+" Open new tab with <Ctrl> + t
+noremap <C-t> :tabnew<Enter>
+
+" Close tab with <Ctrl> + w
+noremap <C-w> :tabclose<Enter>
+
+" Got to function/method definition in file with <Ctrl> + r
+noremap <C-r> :CtrlPBufTag<Enter>
