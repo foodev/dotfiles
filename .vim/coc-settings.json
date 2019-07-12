@@ -1,0 +1,11 @@
+{
+    "suggest.enablePreview": true,
+    "suggest.floatEnable": false,
+    "suggest.noselect": false,
+    "suggest.disableKind": true,
+    "diagnostic.enable": false,
+    "signature.enable": false,
+    "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.jumpCommand": "tabe",
+    "coc.preferences.snippets.enable": false
+}
