@@ -19,3 +19,6 @@
 [submodule ".vim/pack/system/start/coc.nvim"]
 	path = .vim/pack/system/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".vim/pack/system/start/editorconfig-vim"]
+	path = .vim/pack/system/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
