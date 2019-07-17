@@ -25,7 +25,7 @@ set nowrap
 set colorcolumn=80
 
 " Show whitespaces and tabs
-set list listchars=space:·,tab:──
+set list listchars=tab:\ \ ,space:·
 
 " Insert 4 whitespace characters when the tab key is pressed
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
