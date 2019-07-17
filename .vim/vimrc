@@ -42,6 +42,9 @@ set incsearch
 " Show the current command in the bottom right corner
 set showcmd
 
+" Configure what should be saved via 'mksession'
+set sessionoptions=blank,curdir,folds,slash,tabpages,unix
+
 " List files with builtin filebrowser as tree on the left side and without banner
 let g:netrw_liststyle=3
 let g:netrw_banner=0
