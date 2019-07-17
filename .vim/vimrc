@@ -76,6 +76,9 @@ noremap <C-w> :tabclose<Enter>
 " Got to function/method definition in file with <Ctrl> + r
 noremap <C-r> :CtrlPBufTag<Enter>
 
+" Reload current file with <F5>
+noremap <F5> :e<Enter>
+
 " Trigger code completion on <TAB>
 function! s:check_back_space() abort
     let col = col('.') - 1
