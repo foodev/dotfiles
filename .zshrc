@@ -99,5 +99,10 @@ export TERM=xterm-256color
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# https://github.com/zsh-users/zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY="completion"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+
 # Solarized colors for directory lisintg (https://github.com/seebi/dircolors-solarized)
 eval `dircolors $HOME/.dircolors`

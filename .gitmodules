@@ -19,3 +19,6 @@
 [submodule ".vim/pack/system/start/editorconfig-vim"]
 	path = .vim/pack/system/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/pack/system/start/vdebug"]
+	path = .vim/pack/system/start/vdebug
+	url = https://github.com/vim-vdebug/vdebug.git
