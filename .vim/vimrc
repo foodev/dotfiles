@@ -8,7 +8,7 @@ set laststatus=2 statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}%{
 set mouse=a
 
 " Show line numbers
-set number
+set number relativenumber
 
 " Enable syntax highlighting
 syntax enable
