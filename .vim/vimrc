@@ -84,3 +84,28 @@ inoremap <silent><expr> <TAB>
               \ pumvisible() ? "\<C-n>" :
               \ <SID>check_back_space() ? "\<TAB>" :
               \ coc#refresh()
+
+" Custom settings for vdebug
+if !exists('g:vdebug_options')
+	let g:vdebug_options = {}
+endif
+
+let g:vdebug_options.path_maps = {
+\    '/srv/http': '/home/jonas/workspace'
+\}
+
+" Shortcuts for vdebug
+if !exists('g:vdebug_keymap')
+	let g:vdebug_keymap = {}
+endif
+
+let g:vdebug_keymap['run'] = '<C-F5>'
+let g:vdebug_keymap['run_to_cursor'] = '<C-F9>'
+let g:vdebug_keymap['step_over'] = '<C-F2>'
+let g:vdebug_keymap['step_into'] = '<C-F3>'
+let g:vdebug_keymap['step_out'] = '<C-F4>'
+let g:vdebug_keymap['close'] = '<C-F6>'
+let g:vdebug_keymap['detach'] = '<C-F7>'
+let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
+let g:vdebug_keymap['get_context'] = '<C-F11>'
+let g:vdebug_keymap['eval_under_cursor'] = '<C-F12>'
