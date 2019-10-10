@@ -2,7 +2,7 @@
 set showtabline=2
 
 " Status bar
-set laststatus=2 statusline=\ Line\ %l,\ Column\ %c%=%{toupper(&fileencoding)}%{repeat(\"\ \",5)}%{toupper(&fileformat)}%{repeat(\"\ \",5)}%{&shiftwidth}%{repeat(\"\ \",4)}\ %Y%{repeat(\"\ \",5)}
+set laststatus=2 statusline=\ Line\ %l,\ Column\ %c,\ Unicode\ %B%=%{toupper(&fileencoding)}%{repeat(\"\ \",5)}%{toupper(&fileformat)}%{repeat(\"\ \",5)}%{&shiftwidth}%{repeat(\"\ \",4)}\ %Y%{repeat(\"\ \",5)}
 
 " Enable mouse support for terminals
 set mouse=a
