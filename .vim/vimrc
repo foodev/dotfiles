@@ -74,6 +74,9 @@ noremap <F5> :e<Enter>
 " Copy selection to system clipboard with <C-y>
 noremap <C-y> "+y
 
+" Toggle show whitespaces and tabs
+noremap <F3> :set list! list?<Enter>
+
 " Trigger code completion on <TAB>
 function! s:check_back_space() abort
     let col = col('.') - 1
