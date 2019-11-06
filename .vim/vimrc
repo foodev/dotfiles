@@ -45,6 +45,10 @@ set showcmd
 " Configure what should be saved via 'mksession'
 set sessionoptions=blank,curdir,folds,slash,tabpages,unix
 
+" Open new split windows right next to/below the current one
+set splitbelow
+set splitright
+
 " List files with builtin filebrowser as tree on the left side and without banner
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
