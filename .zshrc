@@ -98,4 +98,4 @@ export TERM=xterm-256color
 source ~/.dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Solarized colors for directory lisintg (https://github.com/seebi/dircolors-solarized)
-eval `dircolors $HOME/.dircolors`
+eval `dircolors $HOME/.dotfiles/dircolors-solarized/dircolors.256dark`
