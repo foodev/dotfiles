@@ -22,3 +22,6 @@
 [submodule ".vim/pack/system/start/vdebug"]
 	path = .vim/pack/system/start/vdebug
 	url = https://github.com/vim-vdebug/vdebug.git
+[submodule ".zsh/zsh-syntax-highlighting"]
+	path = .zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
