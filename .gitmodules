@@ -22,3 +22,6 @@
 [submodule ".vim/pack/system/start/vdebug"]
 	path = .vim/pack/system/start/vdebug
 	url = https://github.com/vim-vdebug/vdebug.git
+[submodule ".vim/pack/system/start/tagbar"]
+	path = .vim/pack/system/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
