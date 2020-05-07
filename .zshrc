@@ -75,9 +75,7 @@ function vm() {
 # Aliases
 alias grep='grep --color=auto'
 alias rm='rm -iv'
-alias ls='ls --color=auto'
-alias l='ls -lh'
-alias la='ls -lha'
+alias ls='ls --color=auto --human-readable --group-directories-first'
 alias md='mkdir'
 alias rd='rm -r'
 for bin in cp mv mkdir chmod chown; do
@@ -97,12 +95,7 @@ export EDITOR=vim
 export TERM=xterm-256color
 
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# https://github.com/zsh-users/zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY="completion"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+source ~/.dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Solarized colors for directory lisintg (https://github.com/seebi/dircolors-solarized)
 eval `dircolors $HOME/.dircolors`
