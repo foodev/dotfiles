@@ -6,6 +6,7 @@
     "diagnostic.enable": false,
     "signature.enable": false,
     "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.bracketEnterImprove": false,
     "coc.preferences.jumpCommand": "tabe",
     "coc.preferences.snippets.enable": false
 }

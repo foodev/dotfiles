@@ -34,7 +34,7 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent
 
 " Fold code based on indentation
-set foldmethod=indent foldminlines=0
+set foldmethod=indent foldminlines=0 foldlevelstart=20
 
 " Find search term while typing
 set incsearch
