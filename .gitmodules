@@ -22,12 +22,15 @@
 [submodule ".vim/pack/system/start/vdebug"]
 	path = .vim/pack/system/start/vdebug
 	url = https://github.com/vim-vdebug/vdebug.git
+[submodule ".vim/pack/syntax/start/vim-polyglot"]
+	path = .vim/pack/syntax/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/system/start/tagbar"]
+	path = .vim/pack/system/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
 [submodule ".zsh/zsh-syntax-highlighting"]
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule ".vim/pack/syntax/start/vim-polyglot"]
-	path = .vim/pack/syntax/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
