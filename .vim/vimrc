@@ -49,6 +49,13 @@ set sessionoptions=blank,curdir,folds,slash,tabpages,unix
 set splitbelow
 set splitright
 
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files ob tab complete
+set wildmenu
+
 " List files with builtin filebrowser as tree on the left side and without banner
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
