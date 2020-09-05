@@ -1,3 +1,8 @@
+" Enable syntax highlighting
+syntax enable
+set background=dark " Use "light" for light theme
+colorscheme solarized
+
 " Tab bar
 set showtabline=2
 
@@ -9,11 +14,6 @@ set mouse=a
 
 " Show line numbers
 set number
-
-" Enable syntax highlighting
-syntax enable
-set background=dark " Use "light" for light theme
-colorscheme solarized
 
 " Highlight current line
 set cursorline
