@@ -99,6 +99,9 @@ inoremap <silent><expr> <TAB>
               \ <SID>check_back_space() ? "\<TAB>" :
               \ coc#refresh()
 
+" Update GitGutter only when file is saved
+autocmd BufWritePost * GitGutter
+
 " Custom settings for vdebug
 if !exists('g:vdebug_options')
 	let g:vdebug_options = {}
