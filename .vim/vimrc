@@ -77,13 +77,13 @@ let g:gitgutter_sign_modified_removed = "•"
 " Let fzf colors match our colorscheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
+  \ 'bg':      ['bg', 'CursorLine'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
+  \ 'border':  ['bg', 'CursorLine'],
   \ 'prompt':  ['fg', 'Conditional'],
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
