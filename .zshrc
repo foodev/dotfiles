@@ -77,6 +77,9 @@ export TERM=xterm-256color
 export FZF_DEFAULT_COMMAND="find . -type f -not -path '*/\.git/*'"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
+# bat
+export BAT_THEME="Solarized (dark)"
+
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/.dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
