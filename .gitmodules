@@ -19,9 +19,6 @@
 [submodule ".vim/pack/syntax/start/vim-polyglot"]
 	path = .vim/pack/syntax/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule ".vim/pack/system/start/tagbar"]
-	path = .vim/pack/system/start/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule ".vim/pack/system/start/fzf.vim"]
 	path = .vim/pack/system/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
