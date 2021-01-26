@@ -1,9 +1,6 @@
 [submodule ".vim/pack/colorschemes/start/vim-colors-solarized"]
 	path = .vim/pack/colorschemes/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/pack/syntax/start/vim-javascript"]
-	path = .vim/pack/syntax/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".vim/pack/syntax/start/auto-pairs"]
 	path = .vim/pack/syntax/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
