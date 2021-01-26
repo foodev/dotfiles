@@ -67,8 +67,8 @@ alias pkgins='pikaur -S'
 alias pkgrem='pikaur -Rns'
 alias pkgsearch='pikaur -Ss'
 alias g='git'
-alias s='ack --with-filename'
-alias sp='ack --with-filename --type=php'
+alias s='ag'
+alias sp='ag --php'
 
 export EDITOR=vim
 export TERM=xterm-256color
