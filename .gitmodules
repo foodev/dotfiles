@@ -7,9 +7,6 @@
 [submodule ".vim/pack/syntax/start/auto-pairs"]
 	path = .vim/pack/syntax/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule ".vim/pack/system/start/ctrlp.vim"]
-	path = .vim/pack/system/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule ".vim/pack/system/start/vim-gitgutter"]
 	path = .vim/pack/system/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
@@ -28,6 +25,9 @@
 [submodule ".vim/pack/system/start/tagbar"]
 	path = .vim/pack/system/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule ".vim/pack/system/start/fzf.vim"]
+	path = .vim/pack/system/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
 [submodule ".zsh/zsh-syntax-highlighting"]
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting

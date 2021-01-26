@@ -73,6 +73,10 @@ alias sp='ack --with-filename --type=php'
 export EDITOR=vim
 export TERM=xterm-256color
 
+# fzf
+export FZF_DEFAULT_COMMAND="find . -not -path '*/\.git/*'"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/.dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

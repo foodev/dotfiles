@@ -64,11 +64,23 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_dirhistmax = 0
 
-" Display CtrlP dropdown at the top of the window
-let g:ctrlp_match_window = 'top,order:ttb,result:0'
+" Let fzf colors match our colorscheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
-" Show only methods/functions with CtrlPBufTag
-let g:ctrlp_buftag_types = {'php': '--php-kinds=f'}
+let mapleader = "\<Space>"
 
 " Open new tab with <Ctrl> + t
 noremap <C-t> :tabnew<Enter>
@@ -76,8 +88,8 @@ noremap <C-t> :tabnew<Enter>
 " Close tab with <Ctrl> + w
 noremap <C-w> :tabclose<Enter>
 
-" Got to function/method definition in file with <Ctrl> + r
-noremap <C-r> :CtrlPBufTag<Enter>
+" Open files with <Leader> + p
+noremap <Leader>p :Files<Enter>
 
 " Reload current file with <F5>
 noremap <F5> :e<Enter>
