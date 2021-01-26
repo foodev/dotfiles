@@ -46,11 +46,6 @@ else
     export PS1=$'%{\e[38;5;250m%}${prefix:-""}%{\e[38;5;39m%}%n%{\e[38;5;250m%}@%{\e[38;5;173m%}%m%{\e[38;5;250m%}:%{\e[38;5;155m%}%~%{\e[0m%}${vcs_info_msg_0_} %{\e[38;5;250m%}λ%{\e[0m%} '
 fi
 
-# Functions
-function find_duplicates() {
-    find $1 -type f -exec md5sum {} \; | sort | uniq -D --check-chars=32
-}
-
 # Aliases
 alias grep='grep --color=auto'
 alias rm='rm -iv'
