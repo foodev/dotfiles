@@ -64,6 +64,16 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_dirhistmax = 0
 
+" GitGutter shouldn't add any keybindings
+let g:gitgutter_map_keys = 0
+
+" Always use • as GitGutter symbol - it looks much cleaner ;)
+let g:gitgutter_sign_added = "•"
+let g:gitgutter_sign_modified = "•"
+let g:gitgutter_sign_removed = "•"
+let g:gitgutter_sign_removed_first_line = "•"
+let g:gitgutter_sign_modified_removed = "•"
+
 " Let fzf colors match our colorscheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
