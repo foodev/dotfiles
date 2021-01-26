@@ -101,6 +101,9 @@ noremap <C-w> :tabclose<Enter>
 " Open files with <Leader> + p
 noremap <Leader>p :Files<Enter>
 
+" Go to method/variable/etc. definition with <Leader> + r
+noremap <Leader>r :BTags<Enter>
+
 " Reload current file with <F5>
 noremap <F5> :e<Enter>
 
