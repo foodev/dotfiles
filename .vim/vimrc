@@ -154,3 +154,11 @@ let g:vdebug_keymap['detach'] = '<C-F7>'
 let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
 let g:vdebug_keymap['get_context'] = '<C-F11>'
 let g:vdebug_keymap['eval_under_cursor'] = '<C-F12>'
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
