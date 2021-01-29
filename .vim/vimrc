@@ -21,9 +21,6 @@ set cursorline
 " Don't wrap lines
 set nowrap
 
-" Show vertical line at column 80
-set colorcolumn=80
-
 " Show whitespaces and tabs
 set listchars=tab:\ \ ,space:·
 
