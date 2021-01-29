@@ -142,11 +142,11 @@ let g:vdebug_keymap['eval_under_cursor'] = '<C-F12>'
 
 let mapleader = "\<Space>"
 
-" Open new tab with <Ctrl> + t
-noremap <C-t> :tabnew<Enter>
+" Open new tab with <Leader> + t
+noremap <Leader>t :tabnew<Enter>
 
-" Close tab with <Ctrl> + w
-noremap <C-w> :tabclose<Enter>
+" Close tab with <Leader> + w
+noremap <Leader>w :tabclose<Enter>
 
 " Open files with <Leader> + p
 noremap <Leader>p :Files<Enter>
@@ -154,11 +154,11 @@ noremap <Leader>p :Files<Enter>
 " Go to method/variable/etc. definition with <Leader> + r
 noremap <Leader>r :BTags<Enter>
 
+" Copy selection to system clipboard with <Leader> + y
+noremap <Leader>y "+y
+
 " Reload current file with <F5>
 noremap <F5> :e<Enter>
-
-" Copy selection to system clipboard with <C-y>
-noremap <C-y> "+y
 
 " Toggle show whitespaces and tabs
 noremap <F3> :set list! list?<Enter>
