@@ -53,6 +53,9 @@ set path+=**
 " Display all matching files ob tab complete
 set wildmenu
 
+" Always show the sign column (used for GitGutter signs)
+set signcolumn=yes
+
 "
 " netrw settngs
 "
