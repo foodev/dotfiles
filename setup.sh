@@ -6,7 +6,7 @@
 # date: 2014-03-26
 #
 
-FILES=(".vim .zshrc .gitconfig")
+FILES=(".vim .zshrc .gitconfig .Xresources .Xresources.d")
 
 for file in $FILES; do
     read -p "Create symlink $HOME/$file ? [Y/n] " CONFIRM
