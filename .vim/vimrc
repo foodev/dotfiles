@@ -56,6 +56,10 @@ set path+=**
 " Display all matching files ob tab complete
 set wildmenu
 
+"
+" netrw settngs
+"
+
 " List files with builtin filebrowser as tree on the left side and without banner
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -63,6 +67,10 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_dirhistmax = 0
+
+"
+" GitGutter settngs
+"
 
 " GitGutter shouldn't add any keybindings
 let g:gitgutter_map_keys = 0
@@ -73,6 +81,13 @@ let g:gitgutter_sign_modified = "•"
 let g:gitgutter_sign_removed = "•"
 let g:gitgutter_sign_removed_first_line = "•"
 let g:gitgutter_sign_modified_removed = "•"
+
+" Update GitGutter only when file is saved
+autocmd BufWritePost * GitGutter
+
+"
+" fzf settngs
+"
 
 " fzf popup window layout
 let g:fzf_layout = { 'window': { 'width': 0.4, 'height': 0.3 } }
@@ -95,6 +110,38 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+"
+" vdebug settngs
+"
+
+if !exists('g:vdebug_options')
+	let g:vdebug_options = {}
+endif
+
+let g:vdebug_options.path_maps = {
+\    '/srv/http': '/home/jonas/workspace'
+\}
+
+" Shortcuts for vdebug
+if !exists('g:vdebug_keymap')
+	let g:vdebug_keymap = {}
+endif
+
+let g:vdebug_keymap['run'] = '<C-F5>'
+let g:vdebug_keymap['run_to_cursor'] = '<C-F9>'
+let g:vdebug_keymap['step_over'] = '<C-F2>'
+let g:vdebug_keymap['step_into'] = '<C-F3>'
+let g:vdebug_keymap['step_out'] = '<C-F4>'
+let g:vdebug_keymap['close'] = '<C-F6>'
+let g:vdebug_keymap['detach'] = '<C-F7>'
+let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
+let g:vdebug_keymap['get_context'] = '<C-F11>'
+let g:vdebug_keymap['eval_under_cursor'] = '<C-F12>'
+
+"
+" Custom keyboard shortcuts
+"
 
 let mapleader = "\<Space>"
 
@@ -132,34 +179,6 @@ inoremap <silent><expr> <TAB>
               \ pumvisible() ? "\<C-n>" :
               \ <SID>check_back_space() ? "\<TAB>" :
               \ coc#refresh()
-
-" Update GitGutter only when file is saved
-autocmd BufWritePost * GitGutter
-
-" Custom settings for vdebug
-if !exists('g:vdebug_options')
-	let g:vdebug_options = {}
-endif
-
-let g:vdebug_options.path_maps = {
-\    '/srv/http': '/home/jonas/workspace'
-\}
-
-" Shortcuts for vdebug
-if !exists('g:vdebug_keymap')
-	let g:vdebug_keymap = {}
-endif
-
-let g:vdebug_keymap['run'] = '<C-F5>'
-let g:vdebug_keymap['run_to_cursor'] = '<C-F9>'
-let g:vdebug_keymap['step_over'] = '<C-F2>'
-let g:vdebug_keymap['step_into'] = '<C-F3>'
-let g:vdebug_keymap['step_out'] = '<C-F4>'
-let g:vdebug_keymap['close'] = '<C-F6>'
-let g:vdebug_keymap['detach'] = '<C-F7>'
-let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
-let g:vdebug_keymap['get_context'] = '<C-F11>'
-let g:vdebug_keymap['eval_under_cursor'] = '<C-F12>'
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
