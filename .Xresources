@@ -1,1 +1,3 @@
 #include ".Xresources.d/solarized/Xresources.dark"
+
+Xcursor.theme: Simple-and-Soft
