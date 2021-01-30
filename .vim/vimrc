@@ -3,6 +3,10 @@ syntax enable
 set background=dark " Use "light" for light theme
 colorscheme solarized
 
+" Fix for GitGutter
+" Might be fixed with https://github.com/airblade/vim-gitgutter/pull/729
+highlight! link SignColumn LineNr
+
 " Tab bar
 set showtabline=2
 
