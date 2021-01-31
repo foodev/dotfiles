@@ -60,6 +60,9 @@ set wildmenu
 " Always show the sign column (used for GitGutter signs)
 set signcolumn=yes
 
+" Highlight search results
+set hlsearch
+
 "
 " netrw settngs
 "
