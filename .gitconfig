@@ -11,5 +11,9 @@
 	diffc = diff --cached
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	undo = reset --soft HEAD~
+[push]
+	default = current
+[pull]
+	rebase = false
 [commit]
 	gpgsign = true
